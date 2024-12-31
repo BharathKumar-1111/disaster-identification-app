@@ -1,0 +1,160 @@
+/* Apply a background image with a fading effect */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://cdn.corporatefinanceinstitute.com/assets/public-infrastructure.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Main container */
+  .App {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 40px 60px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Heading styles with hover effect */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Heading hover effect */
+  h1:hover {
+    color: #4CAF50; /* Green color on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+  }
+  
+  /* Button styling */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 200px; /* Optional: You can adjust the width */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Disabled button state */
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Button hover effect */
+  button:hover:not(:disabled) {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* Input field */
+  input[type="file"], textarea {
+    width: 80%; /* Same width for both input and textarea */
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    margin: 10px 0;
+    background-color: transparent;
+    color: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Hover effect for input field */
+  input[type="file"]:hover, textarea:hover {
+    border-color: #4CAF50;
+  }
+  
+  /* Add spacing for elements */
+  div {
+    margin-bottom: 20px;
+  }
+  
+  /* Result display */
+  pre {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 30px;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 5px;
+  }
+  
+  /* Animation for fade-in effect */
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Loading bar below the button */
+  .button-container {
+    position: relative;
+    width: 200px;
+  }
+  
+  .loading-line {
+    width: 0;
+    height: 4px;
+    background-color: #4CAF50;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 2s ease-out;
+  }
+  
+  /* Show the loading line when active */
+  .loading-line.active {
+    width: 100%;
+  }
+  
+  /* Responsive design: Make elements stack on smaller screens */
+  @media (max-width: 768px) {
+    .App {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    input[type="file"], textarea {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
